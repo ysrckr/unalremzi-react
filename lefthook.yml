@@ -1,0 +1,19 @@
+pre-push:
+  parallel: true
+  commands:
+    packages-audit:
+      tags: frontend security
+      run: pnpm run audit
+
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: '*.{js,ts,jsx,tsx,css,scss,md,json,yml}'
+      run: pnpm run prettier {staged_files}
+    eslint:
+      glob: '*.{js,ts,jsx,tsx}'
+      run: pnpm run eslint {staged_files}
+    stylelint:
+      glob: '*.{css,scss}'
+      run: pnpm run stylelint {staged_files}
