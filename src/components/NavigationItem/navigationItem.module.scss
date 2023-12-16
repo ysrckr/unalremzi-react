@@ -1,0 +1,21 @@
+@use '@/styles/lists.scss' as l;
+@use '@/styles/colors.scss' as c;
+@use '@/styles/mixins.scss' as m;
+
+.item {
+  width: clamp(10rem, 20vw, 20rem);
+  text-align: center;
+  background-color: c.$secondary;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  @each $device in l.$devices {
+    @include m.media($device) {
+      width: clamp(10rem, 10vw, 10rem);
+      background-color: transparent;
+      box-shadow: none;
+      text-align: left;
+    }
+  }
+}
