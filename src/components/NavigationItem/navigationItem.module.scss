@@ -12,10 +12,11 @@
 
   @each $device in l.$devices {
     @include m.media($device) {
-      width: clamp(10rem, 10vw, 10rem);
+      width: max-content;
       background-color: transparent;
       box-shadow: none;
       text-align: left;
+      padding: 0;
     }
   }
 }
