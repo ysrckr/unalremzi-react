@@ -1,5 +1,5 @@
 import { CompanyLogo } from '@/components/CompanyLogo';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import { Navigation } from '../../components/Navigation';
 import { Squeeze as Hamburger } from 'hamburger-react';
 import styles from './header.module.scss';
@@ -15,7 +15,9 @@ export const Header: FC<HeaderProps> = () => {
     <header className={styles.header}>
       <CompanyLogo src="/images/logo.webp" />
       <Navigation device="desktop" />
-      <Hamburger toggled={isMobileMenuOpen} toggle={toggleMobileMenu} />
+      <div className={styles.hamburger}>
+        <Hamburger toggled={isMobileMenuOpen} toggle={toggleMobileMenu} rounded />
+      </div>
     </header>
   );
 };

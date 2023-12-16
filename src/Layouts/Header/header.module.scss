@@ -1,13 +1,32 @@
+@use 'sass:list';
+@use '@/styles/mixins.scss' as m;
+
+$devices: 'tablet', 'desktop', 'large-desktop';
+
+
 .header {
     position: sticky;
     top: 0;
     left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    gap: 4rem;
     z-index: 10;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     padding: 0.5rem;
     background-color: #76767657;
     color: hsla(38, 34%, 59%, 1.00);
+
+
+}
+
+
+.hamburger {
+    @each $device in $devices {
+        @include m.device($device) {
+            display: none;
+        }
+    }
+    
 }
