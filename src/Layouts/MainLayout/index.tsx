@@ -14,13 +14,15 @@ export const MainLayout: FC<MainLayoutProps> = () => {
   const { isMobileMenuOpen } = useSnapshot(UIStore);
 
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <>
       <Header />
       <main className={styles.main}>
-        {isMobileMenuOpen ? <MobileMenu /> : null}
+        <AnimatePresence initial={false} mode="wait">
+          {isMobileMenuOpen && <MobileMenu />}
+        </AnimatePresence>
         <Outlet />
       </main>
       <Footer />
-    </AnimatePresence>
+    </>
   );
 };

@@ -1,18 +1,23 @@
 import type { FC } from 'react';
 import { Navigation } from '../Navigation';
-import styles from './mobileMenu.module.scss';
 import { motion } from 'framer-motion';
+import styles from './mobileMenu.module.scss';
 
 interface MobileMenuProps {}
 
 export const MobileMenu: FC<MobileMenuProps> = () => {
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: '-100%' },
+  };
   return (
     <motion.div
       className={styles.mobileMenu}
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
-      transition={{ duration: 0.5 }}
+      variants={variants}
+      initial="closed"
+      animate="open"
+      exit="closed"
+      transition={{ damping: 300 }}
     >
       <Navigation device="mobile" />
     </motion.div>

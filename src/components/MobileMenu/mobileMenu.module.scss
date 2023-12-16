@@ -1,5 +1,6 @@
 @use 'sass:list';
 @use '@/styles/mixins.scss' as m;
+@use '@/styles/colors.scss' as c;
 
 $devices: 'tablet', 'desktop', 'large-desktop';
 
@@ -15,6 +16,7 @@ $devices: 'tablet', 'desktop', 'large-desktop';
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: c.$primary;
 
   @each $device in $devices {
     @include m.media($device) {
