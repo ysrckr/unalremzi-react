@@ -3,6 +3,11 @@ export const tr = {
     common: {},
     home: {
       title: 'Anasayfa',
-    }
+    },
+    navigation: {
+      about: 'Hakkımızda',
+      products: 'Ürünler',
+      contact: 'Iletişim',
+    },
   },
 };

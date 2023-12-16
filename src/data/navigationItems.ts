@@ -1,23 +1,19 @@
-import i18n from '../i18n';
-
-
 export interface NavigationItem {
-  label: string;
-  url: '/' | 'about' | 'products' | 'contact-us';
+  key: string;
+  url: '/' | 'about' | 'products' | 'contact';
 }
 
 export const navigationItems: NavigationItem[] = [
- 
   {
-    label: i18n.t('navigation.about'),
+    key: 'navigation.about',
     url: 'about',
   },
   {
-    label: i18n.t('navigation.products'),
+    key: 'navigation.products',
     url: 'products',
   },
   {
-    label: i18n.t('navigation.contactUs'),
-    url: 'contact-us',
+    key: 'navigation.contact',
+    url: 'contact',
   },
 ];

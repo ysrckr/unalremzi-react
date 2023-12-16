@@ -9,7 +9,7 @@ export const en = {
       contact: 'Contact',
       home: 'Home',
       products: 'Products',
-      contactUs: 'Contact Us',
-    }
+      contactUs: 'Contact',
+    },
   },
 };
