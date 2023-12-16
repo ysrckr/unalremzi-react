@@ -1,5 +1,6 @@
 @use 'sass:list';
 @use '@/styles/mixins.scss' as m;
+@use '@/styles/colors.scss' as c;
 
 $devices: 'tablet', 'desktop', 'large-desktop';
 
@@ -15,7 +16,7 @@ $devices: 'tablet', 'desktop', 'large-desktop';
     z-index: 10;
     margin: 0 auto;
     padding: 0.5rem;
-    background-color: #76767657;
+    background-color: c.$primary;
     color: hsla(38, 34%, 59%, 1.00);
 
    

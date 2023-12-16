@@ -1,3 +1,5 @@
+@use './colors.scss' as c;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -14,7 +16,8 @@
 body {
   margin: 0;
   padding: 0;
-
+  background-color: c.$light;
+  color: c.$primary;
 }
 
 p {
@@ -35,7 +38,7 @@ li {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: c.$primary;
   text-decoration: none;
 }
 
@@ -53,17 +56,4 @@ button {
   border-radius: 4px;
   padding: 8px 16px;
   cursor: pointer;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
