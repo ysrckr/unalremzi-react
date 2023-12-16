@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import { navigationItems } from '@/data/navigationItems';
 import styles from './navigation.module.scss';
-
 import { NavigationItem } from '../NavigationItem';
 
 interface NavigationProps {
