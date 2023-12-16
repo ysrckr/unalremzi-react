@@ -20,9 +20,9 @@
     "no-var": "error",
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
-
     "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-    "no-console": ["warn", { "allow": ["warn", "error"] }]
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
 
   }
 }
