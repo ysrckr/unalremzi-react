@@ -1,5 +1,6 @@
+import { FC, useEffect } from 'react';
+
 import { AnimatePresence } from 'framer-motion';
-import { FC } from 'react';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { MobileMenu } from '@/components/MobileMenu';
@@ -11,8 +12,10 @@ import { useSnapshot } from 'valtio';
 interface MainLayoutProps {}
 
 export const MainLayout: FC<MainLayoutProps> = () => {
-  const { isMobileMenuOpen } = useSnapshot(UIStore);
-
+  const { isMobileMenuOpen, lang } = useSnapshot(UIStore);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
   return (
     <>
       <Header />
