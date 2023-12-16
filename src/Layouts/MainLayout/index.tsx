@@ -1,12 +1,12 @@
+import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
-import { Outlet } from '@tanstack/react-router';
+import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { MobileMenu } from '@/components/MobileMenu';
-import { useSnapshot } from 'valtio';
+import { Outlet } from '@tanstack/react-router';
 import { UIStore } from '@/stores/UIStore';
-import { AnimatePresence } from 'framer-motion';
 import styles from './mainLayout.module.scss';
-import { Footer } from '../Footer';
+import { useSnapshot } from 'valtio';
 
 interface MainLayoutProps {}
 
@@ -16,7 +16,10 @@ export const MainLayout: FC<MainLayoutProps> = () => {
   return (
     <AnimatePresence initial={false} mode="wait">
       <Header />
-      <main className={styles.main}>{isMobileMenuOpen ? <MobileMenu /> : <Outlet />}</main>
+      <main className={styles.main}>
+        {isMobileMenuOpen ? <MobileMenu /> : null}
+        <Outlet />
+      </main>
       <Footer />
     </AnimatePresence>
   );
