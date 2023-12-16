@@ -9,7 +9,7 @@ $devices: 'tablet', 'desktop', 'large-desktop';
     top: 0;
     left: 0;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     gap: 4rem;
     z-index: 10;
@@ -17,6 +17,8 @@ $devices: 'tablet', 'desktop', 'large-desktop';
     padding: 0.5rem;
     background-color: #76767657;
     color: hsla(38, 34%, 59%, 1.00);
+
+   
 
 
 }
