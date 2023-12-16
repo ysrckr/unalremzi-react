@@ -4,6 +4,15 @@ export const en = {
     home: {
       title: 'Home',
     },
+    about: {
+      title: 'About',
+    },
+    contact: {
+      title: 'Contact',
+    },
+    products: {
+      title: 'Products',
+    },
     navigation: {
       about: 'About',
       contact: 'Contact',

@@ -1,7 +1,10 @@
 import { RootRoute, Route, Router } from '@tanstack/react-router';
 
+import { About } from './Pages/About';
+import { Contact } from './Pages/Contact';
 import { Home } from './Pages/Home';
 import { MainLayout } from './Layouts/MainLayout';
+import { Products } from './Pages/Products';
 
 const rootRoute = new RootRoute({
   component: MainLayout,
@@ -16,19 +19,19 @@ const indexRoute = new Route({
 const aboutRoute = new Route({
   getParentRoute: () => rootRoute,
   path: 'about',
-  component: Home,
+  component: About,
 });
 
 const contactRoute = new Route({
   getParentRoute: () => rootRoute,
   path: 'contact',
-  component: Home,
+  component: Contact,
 });
 
 const productsRoute = new Route({
   getParentRoute: () => rootRoute,
   path: 'products',
-  component: Home,
+  component: Products,
 });
 
 const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, contactRoute, productsRoute]);
