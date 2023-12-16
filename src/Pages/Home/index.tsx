@@ -9,7 +9,7 @@ export const Home: FC<HomeProps> = () => {
   const title = t('title');
 
   useEffect(() => {
-    document.title = `UnalRemzi - ${title}`;
+    document.title = `UnalRemzi | ${title}`;
   }, []);
   return (
     <section>
