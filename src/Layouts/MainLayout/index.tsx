@@ -13,9 +13,11 @@ interface MainLayoutProps {}
 
 export const MainLayout: FC<MainLayoutProps> = () => {
   const { isMobileMenuOpen, lang } = useSnapshot(UIStore);
+
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
   return (
     <>
       <Header />

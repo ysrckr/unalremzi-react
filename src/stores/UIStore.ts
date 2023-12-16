@@ -19,6 +19,10 @@ export const toggleMobileMenu = () => {
   UIStore.isMobileMenuOpen = !UIStore.isMobileMenuOpen;
 };
 
+export const closeMobileMenu = () => {
+  UIStore.isMobileMenuOpen = false;
+};
+
 export const setLanguage = (lang: string) => {
   UIStore.lang = lang;
 };
