@@ -1,5 +1,7 @@
 export const en = {
   translation: {
-    welcome: 'Welcome',
+    home: {
+      title: 'Home',
+    }
   },
 };

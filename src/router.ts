@@ -1,5 +1,5 @@
 import { MainLayout } from './Layouts/MainLayout';
-import { Home } from './Pages/Home';
+import { Home } from '@pages/Home';
 import { RootRoute, Route, Router } from '@tanstack/react-router';
 
 const rootRoute = new RootRoute({
@@ -15,3 +15,4 @@ const indexRoute = new Route({
 const routeTree = rootRoute.addChildren([indexRoute]);
 
 export const router = new Router({ routeTree });
+

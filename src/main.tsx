@@ -2,9 +2,10 @@ import './styles/index.scss';
 import './i18n';
 import { router } from './router';
 
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from '@tanstack/react-router';
+
 
 declare module '@tanstack/react-router' {
   interface Register {
@@ -12,8 +13,12 @@ declare module '@tanstack/react-router' {
   }
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-);
+const rootElement = document.getElementById('root')!;
+if (!rootElement.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>,
+  );
+}

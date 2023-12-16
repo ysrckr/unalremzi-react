@@ -1,5 +1,7 @@
 export const tr = {
   translation: {
-    welcome: 'Hoşgeldiniz',
+    home: {
+      title: 'Anasayfa',
+    }
   },
 };
