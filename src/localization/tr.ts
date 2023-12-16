@@ -1,5 +1,13 @@
 export const tr = {
   translation: {
-    welcome: 'Hoşgeldiniz',
+    common: {},
+    home: {
+      title: 'Anasayfa',
+    },
+    navigation: {
+      about: 'Hakkımızda',
+      products: 'Ürünler',
+      contact: 'Iletişim',
+    },
   },
 };

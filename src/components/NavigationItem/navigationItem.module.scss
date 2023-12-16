@@ -1,0 +1,43 @@
+@use '@/styles/lists.scss' as l;
+@use '@/styles/colors.scss' as c;
+@use '@/styles/mixins.scss' as m;
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.link {
+  width: clamp(10rem, 20vw, 20rem);
+  color: c.$light;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  transition: color 0.2s ease-in-out;
+  background-color: c.$secondary;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    color: c.$primary;
+  }
+
+  @each $device in l.$devices {
+    @include m.media($device) {
+      width: clamp(10rem, 10vw, 20rem);
+      background-color: transparent;
+      box-shadow: none;
+      color: c.$light;
+      padding: 0;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: c.$gold;
+      }
+    }
+  }
+}

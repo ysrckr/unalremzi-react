@@ -1,0 +1,26 @@
+@use 'sass:list';
+@use '@/styles/mixins.scss' as m;
+@use '@/styles/colors.scss' as c;
+
+$devices: 'tablet', 'desktop', 'large-desktop';
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: c.$primary;
+
+  @each $device in $devices {
+    @include m.media($device) {
+      display: none;
+    }
+  }
+}

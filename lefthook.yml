@@ -15,5 +15,5 @@ pre-commit:
       glob: '*.{js,ts,jsx,tsx}'
       run: pnpm run eslint {staged_files}
     stylelint:
-      glob: '*.{css,scss}'
+      glob: '*.{css,scss,less,sass}'
       run: pnpm run stylelint {staged_files}
