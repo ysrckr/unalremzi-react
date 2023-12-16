@@ -1,6 +1,6 @@
 
 import { MainLayout } from './Layouts/MainLayout';
-import { Home } from '@/Pages/Home';
+import { Home } from './Pages/Home';
 import { RootRoute, Route, Router } from '@tanstack/react-router';
 
 

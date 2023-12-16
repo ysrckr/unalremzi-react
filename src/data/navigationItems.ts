@@ -1,14 +1,16 @@
-import i18n from '@/i18n';
+import i18n from '../i18n';
 
-export const navigationItems = [
+
+export interface NavigationItem {
+  label: string;
+  url: '/' | 'about' | 'products' | 'contact-us';
+}
+
+export const navigationItems: NavigationItem[] = [
  
   {
     label: i18n.t('navigation.about'),
     url: 'about',
-  },
-  {
-    label: i18n.t('navigation.contact'),
-    url: 'contact',
   },
   {
     label: i18n.t('navigation.products'),

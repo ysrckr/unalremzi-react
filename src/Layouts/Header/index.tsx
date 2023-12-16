@@ -1,6 +1,6 @@
-import { CompanyLogo } from '@/components/CompanyLogo';
+import { CompanyLogo } from '../../components/CompanyLogo';
 import { FC } from 'react';
-import { Navigation } from '@/Layouts/Navigation';
+import { Navigation } from '../Navigation';
 
 interface HeaderProps {}
 
