@@ -1,0 +1,10 @@
+@use '@/styles/colors.scss' as c;
+
+.footer {
+  background-color: c.$primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: c.$gold;
+}
