@@ -16,6 +16,9 @@ $devices: 'tablet', 'desktop', 'large-desktop';
   padding: 0.5rem;
   background-color: c.$primary;
   color: hsla(38, 34%, 59%, 1);
+  transition:
+    blur 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
 }
 
 .hamburger {
