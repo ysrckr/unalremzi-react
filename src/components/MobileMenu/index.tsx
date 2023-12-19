@@ -1,6 +1,8 @@
+import { socialMediaList } from '@/data/socialMediaList';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Navigation } from '../Navigation';
-import { motion } from 'framer-motion';
+import { SocialMedia } from '../SocialMedia';
 import styles from './mobileMenu.module.scss';
 
 interface MobileMenuProps {}
@@ -20,6 +22,7 @@ export const MobileMenu: FC<MobileMenuProps> = () => {
       transition={{ damping: 300 }}
     >
       <Navigation device="mobile" />
+      <SocialMedia socialMediaList={socialMediaList} />
     </motion.div>
   );
 };
