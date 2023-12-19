@@ -12,12 +12,12 @@ interface FooterProps {}
 export const Footer: FC<FooterProps> = () => {
   return (
     <footer className={styles.footer}>
-      <CompanyLogo src={companyLogo} />
-      <SocialMedia socialMediaList={socialMediaList} />
-      <section>
+      <section className={styles.section}>
+        <CompanyLogo src={companyLogo} />
+        <SocialMedia socialMediaList={socialMediaList} />
         <DesignedBy author="Yasar Cakir" />
-        <CopyRight companyName="UnalRemzi" />
       </section>
+      <CopyRight companyName="UnalRemzi" />
     </footer>
   );
 };

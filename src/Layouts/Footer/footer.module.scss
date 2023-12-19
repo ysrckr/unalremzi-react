@@ -2,9 +2,20 @@
 
 .footer {
   background-color: c.$primary;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem;
   color: c.$gold;
+
+  &:last-child {
+    text-align: center;
+  }
+
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto 1rem;
+    width: 100%;
+    max-width: 500px;
+  }
 }
