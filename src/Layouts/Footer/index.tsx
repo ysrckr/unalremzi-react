@@ -1,4 +1,6 @@
 import { CompanyLogo } from '@/components/CompanyLogo';
+import { CopyRight } from '@/components/CopyRight';
+import { DesignedBy } from '@/components/DesignedBy';
 import { companyLogo } from '@/utils/constants';
 import type { FC } from 'react';
 import { SocialMedia } from '../../components/SocialMedia';
@@ -11,8 +13,8 @@ export const Footer: FC<FooterProps> = () => {
     <footer className={styles.footer}>
       <CompanyLogo src={companyLogo} />
       <section>
-        <div>Info</div>
-        <p>Copyright</p>
+        <DesignedBy author="Yasar Cakir" />
+        <CopyRight companyName="UnalRemzi" />
       </section>
       <SocialMedia socialMediaList={[]} />
     </footer>
