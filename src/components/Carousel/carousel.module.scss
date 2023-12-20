@@ -1,0 +1,21 @@
+.carousel {
+  .innerCarousel {
+    .imageBlock {
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .carouselControlGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .imageCounter {
+    font-size: 1.1rem;
+  }
+}

@@ -1,5 +1,5 @@
-import type { Image } from '@/types/Images';
 import { FC } from 'react';
+import type { Image } from '@/types/Images';
 import styles from './carousel.module.scss';
 
 interface CarouselProps {
@@ -21,8 +21,8 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
         ))}
       </div>
       <div className={styles.carouselFooter}>
-        <div className={styles.buttonGroup}>buttons</div>
-        <p>count</p>
+        <div className={styles.carouselControlGroup}>buttons</div>
+        <p className={styles.imageCounter}>count</p>
       </div>
     </div>
   );

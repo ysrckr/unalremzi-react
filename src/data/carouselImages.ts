@@ -11,7 +11,7 @@ export const carouselImages: Image[] = [
     alt: 'suit2',
   },
   {
-    src: assetsToSource('images/3.jpeg'),
+    src: assetsToSource('images/suit3.jpeg'),
     alt: 'suit3',
   },
 ];
