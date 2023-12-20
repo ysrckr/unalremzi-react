@@ -1,4 +1,6 @@
 @use '@/styles/colors.scss' as c;
+@use '@/styles/mixins.scss' as m;
+@use '@/styles/lists.scss' as l;
 
 .footer {
   display: grid;
@@ -9,5 +11,23 @@
 
   &:last-child {
     text-align: center;
+  }
+
+  @each $device in l.$devices {
+    @include m.media($device) {
+      grid-template-columns: 1fr 1fr 2fr 2fr;
+      place-items: center;
+    }
+  }
+}
+
+.socialMedia {
+  display: none;
+
+  @each $device in l.$devices {
+    @include m.media($device) {
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 }

@@ -19,7 +19,7 @@
   transition: color 0.2s ease-in-out;
   background-color: c.$secondary;
   border-radius: 0.5rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
   cursor: pointer;
 
   &:hover {

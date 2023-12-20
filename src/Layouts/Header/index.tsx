@@ -1,13 +1,13 @@
-import { FC, useEffect, useState } from 'react';
 import { UIStore, toggleMobileMenu } from '@/stores/UIStore';
+import { FC, useEffect, useState } from 'react';
 
 import { CompanyLogo } from '@/components/CompanyLogo';
-import { Squeeze as Hamburger } from 'hamburger-react';
 import { Navigation } from '@/components/Navigation';
 import { companyLogo } from '@/utils/constants';
 import { motion } from 'framer-motion';
-import styles from './header.module.scss';
+import { Squeeze as Hamburger } from 'hamburger-react';
 import { useSnapshot } from 'valtio';
+import styles from './header.module.scss';
 
 interface HeaderProps {}
 

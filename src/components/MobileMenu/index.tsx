@@ -1,8 +1,8 @@
+import { socialMediaList } from '@/data/socialMediaList';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Navigation } from '../Navigation';
 import { SocialMedia } from '../SocialMedia';
-import { motion } from 'framer-motion';
-import { socialMediaList } from '@/data/socialMediaList';
 import styles from './mobileMenu.module.scss';
 
 interface MobileMenuProps {}

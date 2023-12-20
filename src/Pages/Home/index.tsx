@@ -15,9 +15,7 @@ export const Home: FC<HomeProps> = () => {
   return (
     <section>
       <div className={styles.container}>
-
-      
-        <img src={assetsToSource('images/suit1.jpeg')} width={1000} className={styles.mask}/>
+        <img src={assetsToSource('images/suit1.jpeg')} width={1000} className={styles.mask} />
       </div>
     </section>
   );

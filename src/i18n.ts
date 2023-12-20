@@ -1,6 +1,6 @@
-import { en } from './localization/en.ts';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import { en } from './localization/en.ts';
 import { tr } from './localization/tr.ts';
 
 // the translations

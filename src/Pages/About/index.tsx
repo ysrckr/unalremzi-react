@@ -7,7 +7,7 @@ interface AboutProps {}
 export const About: FC<AboutProps> = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'about' });
   const title = t('title');
-  
+
   useEffect(() => {
     document.title = `UnalRemzi | ${title}`;
   }, []);

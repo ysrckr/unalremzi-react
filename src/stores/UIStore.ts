@@ -1,5 +1,5 @@
-import { devtools } from 'valtio/utils';
 import { proxy } from 'valtio';
+import { devtools } from 'valtio/utils';
 
 interface UIState {
   isMobileMenuOpen: boolean;

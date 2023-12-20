@@ -1,9 +1,9 @@
 import { RootRoute, Route, Router } from '@tanstack/react-router';
 
+import { MainLayout } from './Layouts/MainLayout';
 import { About } from './Pages/About';
 import { Contact } from './Pages/Contact';
 import { Home } from './Pages/Home';
-import { MainLayout } from './Layouts/MainLayout';
 import { Products } from './Pages/Products';
 
 const rootRoute = new RootRoute({

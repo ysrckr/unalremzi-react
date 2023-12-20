@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-import { Link } from '@tanstack/react-router';
 import { closeMobileMenu } from '@/stores/UIStore';
+import { Link } from '@tanstack/react-router';
+import type { FC } from 'react';
 import styles from './companyLogo.module.scss';
 
 interface CompanyLogoProps {
