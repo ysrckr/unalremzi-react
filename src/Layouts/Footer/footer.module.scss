@@ -1,0 +1,13 @@
+@use '@/styles/colors.scss' as c;
+
+.footer {
+  display: grid;
+  gap: 0.5rem;
+  background-color: c.$primary;
+  padding: 1rem;
+  color: c.$gold;
+
+  &:last-child {
+    text-align: center;
+  }
+}

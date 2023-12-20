@@ -1,0 +1,11 @@
+@use '@/styles/colors.scss' as c;
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+}

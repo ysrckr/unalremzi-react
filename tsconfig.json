@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/*", "./dist/*"],
+      "@/*": ["./src/*", "./dist/*"]
     }
   },
   "include": ["src"],
