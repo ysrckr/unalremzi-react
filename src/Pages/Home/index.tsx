@@ -1,7 +1,7 @@
-import { assetsToSource } from '@/utils/fileToSource';
+import { Carousel } from '@/components/Carousel';
+import { carouselImages } from '@/data/carouselImages';
 import { useEffect, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import styles from './home.module.scss';
 
 interface HomeProps {}
 
@@ -14,9 +14,7 @@ export const Home: FC<HomeProps> = () => {
   }, []);
   return (
     <section>
-      <div className={styles.container}>
-        <img src={assetsToSource('images/suit1.jpeg')} width={1000} className={styles.mask} />
-      </div>
+      <Carousel images={carouselImages} />
     </section>
   );
 };
