@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import type { Image } from '@/types/Images';
+import { FC } from 'react';
 import styles from './carousel.module.scss';
 
 interface CarouselProps {
