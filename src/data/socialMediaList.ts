@@ -5,11 +5,11 @@ export const socialMediaList: SocialMedia[] = [
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/eduardoarandah/',
-    icon: assetsToSource(`icons/social/instagram.svg`),
+    icon: assetsToSource('icons/social/instagram.svg'),
   },
   {
     name: 'Facebook',
     url: 'https://www.facebook.com/eduardoarandah',
-    icon: assetsToSource(`icons/social/facebook.svg`),
+    icon: assetsToSource('icons/social/facebook.svg'),
   },
 ];
