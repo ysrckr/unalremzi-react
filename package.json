@@ -11,7 +11,7 @@
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "format": "prettier --write .",
-    "add": "pnpm lint:fix && pnpm stylelint:fix && pnpm format",
+    "fix": "pnpm lint:fix && pnpm stylelint:fix && pnpm format",
     "preview": "vite preview"
   },
   "dependencies": {
