@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import type { Image } from '@/types/Images';
+import cn from 'classnames';
 import styles from './carousel.module.scss';
 
 interface CarouselProps {
@@ -36,26 +37,17 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
 
   const variants = {
     initial: (direction: Direction) => ({
-      opacity: 0,
-      x: direction === 'left' ? -100 : 100,
-      y: 0,
-      maskPosition: direction === 'left' ? '100%' : '-100%',
+      maskSize: direction === 'left' ? '50% 50%' : '50% 500%',
     }),
     animate: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      maskPosition: '0%',
+      maskSize: '200% 200%',
       transition: {
         duration: 0.5,
         ease: 'easeInOut',
       },
     },
     exit: (direction: Direction) => ({
-      opacity: 0,
-      x: direction === 'left' ? 100 : -100,
-      y: 0,
-      maskPosition: direction === 'left' ? '-100%' : '100%',
+      maskSize: direction === 'left' ? '50% 100%' : '50% 100%',
     }),
   };
 
@@ -71,7 +63,7 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
             key={images[currentImage].src}
             src={images[currentImage].src}
             alt={images[currentImage].alt}
-            className={styles.image}
+            className={cn(styles.image, styles.mask)}
             variants={variants}
             initial="initial"
             animate="animate"
