@@ -1,18 +1,21 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { FC, useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import type { Image } from '@/types/Images';
-import cn from 'classnames';
 import styles from './carousel.module.scss';
 
 interface CarouselProps {
   images: Image[];
 }
-
+type Direction = 'left' | 'right';
 export const Carousel: FC<CarouselProps> = ({ images }) => {
   const imageCount = images.length;
   const [currentImage, setCurrentImage] = useState(0);
+  const [direction, setDirection] = useState<Direction>('right');
 
   const handleNextImage = () => {
+    setDirection('right');
     if (currentImage === imageCount - 1) {
       setCurrentImage(0);
       return;
@@ -21,6 +24,7 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
   };
 
   const handlePrevImage = () => {
+    setDirection('left');
     if (currentImage === 0) {
       setCurrentImage(imageCount - 1);
       return;
@@ -30,6 +34,31 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
 
   const imageCounter = `${currentImage + 1}/${imageCount}`;
 
+  const variants = {
+    initial: (direction: Direction) => ({
+      opacity: 0,
+      x: direction === 'left' ? -100 : 100,
+      y: 0,
+      maskPosition: direction === 'left' ? '100%' : '-100%',
+    }),
+    animate: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      maskPosition: '0%',
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    },
+    exit: (direction: Direction) => ({
+      opacity: 0,
+      x: direction === 'left' ? 100 : -100,
+      y: 0,
+      maskPosition: direction === 'left' ? '-100%' : '100%',
+    }),
+  };
+
   if (!images.length) {
     return null;
   }
@@ -37,19 +66,30 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
   return (
     <div className={styles.carousel}>
       <div className={styles.innerCarousel}>
-        <img
-          key={images[currentImage].src}
-          src={images[currentImage].src}
-          alt={images[currentImage].alt}
-          className={styles.image}
-        />
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={images[currentImage].src}
+            src={images[currentImage].src}
+            alt={images[currentImage].alt}
+            className={styles.image}
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            custom={direction}
+          />
+        </AnimatePresence>
       </div>
       <div className={styles.carouselFooter}>
         <div className={styles.carouselControlGroup}>
-          <button onClick={handleNextImage}>ileri</button>
-          <button onClick={handlePrevImage}>geri</button>
+          <button onClick={handleNextImage} className={styles.controlButton}>
+            <FaArrowLeft />
+          </button>
+          <button onClick={handlePrevImage} className={styles.controlButton}>
+            <FaArrowRight />
+          </button>
         </div>
-        <p className={cn(styles.imageCounter, styles.mask)}>{imageCounter}</p>
+        <p className={styles.imageCounter}>{imageCounter}</p>
       </div>
     </div>
   );
