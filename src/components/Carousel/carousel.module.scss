@@ -5,10 +5,20 @@
   justify-content: center;
   width: clamp(300px, 100%, 1000px);
   gap: 1rem;
+
   .innerCarousel {
     position: relative;
     width: 200px;
     height: 200px;
+
+    .mask {
+      mask-image: url(../../assets/masks/blob.svg);
+      mask-mode: alpha;
+      mask-size: cover;
+      mask-repeat: no-repeat;
+      mask-position: top right;
+    }
+
     .image {
       position: absolute;
       top: 0;
@@ -25,6 +35,7 @@
     justify-content: space-between;
     align-items: center;
     width: 200px;
+
     .carouselControlGroup {
       display: flex;
       justify-content: space-between;

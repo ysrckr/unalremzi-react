@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 
 import type { Image } from '@/types/Images';
+import cn from 'classnames';
 import styles from './carousel.module.scss';
 
 interface CarouselProps {
@@ -36,14 +37,19 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
   return (
     <div className={styles.carousel}>
       <div className={styles.innerCarousel}>
-        <img src={images[currentImage].src} alt="" className={styles.image} />
+        <img
+          key={images[currentImage].src}
+          src={images[currentImage].src}
+          alt={images[currentImage].alt}
+          className={styles.image}
+        />
       </div>
       <div className={styles.carouselFooter}>
         <div className={styles.carouselControlGroup}>
           <button onClick={handleNextImage}>ileri</button>
           <button onClick={handlePrevImage}>geri</button>
         </div>
-        <p className={styles.imageCounter}>{imageCounter}</p>
+        <p className={cn(styles.imageCounter, styles.mask)}>{imageCounter}</p>
       </div>
     </div>
   );
