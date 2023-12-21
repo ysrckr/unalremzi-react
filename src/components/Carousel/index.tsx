@@ -1,5 +1,6 @@
+import { FC, useState } from 'react';
+
 import type { Image } from '@/types/Images';
-import { FC } from 'react';
 import styles from './carousel.module.scss';
 
 interface CarouselProps {
@@ -7,6 +8,27 @@ interface CarouselProps {
 }
 
 export const Carousel: FC<CarouselProps> = ({ images }) => {
+  const imageCount = images.length;
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handleNextImage = () => {
+    if (currentImage === imageCount - 1) {
+      setCurrentImage(0);
+      return;
+    }
+    setCurrentImage(currentImage + 1);
+  };
+
+  const handlePrevImage = () => {
+    if (currentImage === 0) {
+      setCurrentImage(imageCount - 1);
+      return;
+    }
+    setCurrentImage(currentImage - 1);
+  };
+
+  const imageCounter = `${currentImage + 1}/${imageCount}`;
+
   if (!images.length) {
     return null;
   }
@@ -14,15 +36,14 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
   return (
     <div className={styles.carousel}>
       <div className={styles.innerCarousel}>
-        {images.map(image => (
-          <div className={styles.imageBlock} key={image.alt}>
-            <img src={image.src} alt={image.alt} className={styles.image} />
-          </div>
-        ))}
+        <img src={images[currentImage].src} alt="" className={styles.image} />
       </div>
       <div className={styles.carouselFooter}>
-        <div className={styles.carouselControlGroup}>buttons</div>
-        <p className={styles.imageCounter}>count</p>
+        <div className={styles.carouselControlGroup}>
+          <button onClick={handleNextImage}>ileri</button>
+          <button onClick={handlePrevImage}>geri</button>
+        </div>
+        <p className={styles.imageCounter}>{imageCounter}</p>
       </div>
     </div>
   );
