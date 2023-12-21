@@ -1,11 +1,10 @@
-import './styles/index.scss';
 import './i18n';
 import { router } from './router';
+import './styles/index.scss';
 
+import { RouterProvider } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from '@tanstack/react-router';
-
 
 declare module '@tanstack/react-router' {
   interface Register {

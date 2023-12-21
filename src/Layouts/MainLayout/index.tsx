@@ -1,13 +1,13 @@
 import { FC, useEffect } from 'react';
 
+import { MobileMenu } from '@/components/MobileMenu';
+import { UIStore } from '@/stores/UIStore';
+import { Outlet } from '@tanstack/react-router';
 import { AnimatePresence } from 'framer-motion';
+import { useSnapshot } from 'valtio';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
-import { MobileMenu } from '@/components/MobileMenu';
-import { Outlet } from '@tanstack/react-router';
-import { UIStore } from '@/stores/UIStore';
 import styles from './mainLayout.module.scss';
-import { useSnapshot } from 'valtio';
 
 interface MainLayoutProps {}
 

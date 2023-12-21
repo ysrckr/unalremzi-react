@@ -15,7 +15,7 @@ $devices: 'tablet', 'desktop', 'large-desktop';
   margin: 0 auto;
   padding: 0.5rem;
   background-color: c.$primary;
-  color: hsla(38, 34%, 59%, 1);
+  color: hsl(38deg 34% 59% / 100%);
   transition:
     blur 0.3s ease-in-out,
     background-color 0.3s ease-in-out;
