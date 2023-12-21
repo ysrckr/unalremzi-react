@@ -2,6 +2,7 @@ import { Carousel } from '@/components/Carousel';
 import { carouselImages } from '@/data/carouselImages';
 import { useEffect, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import styles from './home.module.scss';
 
 interface HomeProps {}
 
@@ -13,7 +14,7 @@ export const Home: FC<HomeProps> = () => {
     document.title = `UnalRemzi | ${title}`;
   }, []);
   return (
-    <section>
+    <section className={styles.section} >
       <Carousel images={carouselImages} />
     </section>
   );

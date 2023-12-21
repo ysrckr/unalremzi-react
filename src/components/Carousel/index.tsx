@@ -9,14 +9,14 @@ import styles from './carousel.module.scss';
 interface CarouselProps {
   images: Image[];
 }
-type Direction = 'left' | 'right';
+type Direction = 0 | 1 | -1;
 export const Carousel: FC<CarouselProps> = ({ images }) => {
   const imageCount = images.length;
   const [currentImage, setCurrentImage] = useState(0);
-  const [direction, setDirection] = useState<Direction>('right');
+  const [direction, setDirection] = useState<Direction>(0);
 
   const handleNextImage = () => {
-    setDirection('right');
+    setDirection(1);
     if (currentImage === imageCount - 1) {
       setCurrentImage(0);
       return;
@@ -25,7 +25,7 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
   };
 
   const handlePrevImage = () => {
-    setDirection('left');
+    setDirection(-1);
     if (currentImage === 0) {
       setCurrentImage(imageCount - 1);
       return;
@@ -37,17 +37,16 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
 
   const variants = {
     initial: (direction: Direction) => ({
-      maskSize: direction === 'left' ? '50% 50%' : '50% 500%',
+      maskPosition: direction < 0 ? '0 150%' : '0 -50%',
     }),
     animate: {
-      maskSize: '200% 200%',
+      maskPosition: '0 50%',
       transition: {
         duration: 0.5,
-        ease: 'easeInOut',
       },
     },
     exit: (direction: Direction) => ({
-      maskSize: direction === 'left' ? '50% 100%' : '50% 100%',
+      maskPosition: direction < 0 ? '0 -50%' : '0 150%',
     }),
   };
 
@@ -60,7 +59,7 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
       <div className={styles.innerCarousel}>
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
-            key={images[currentImage].src}
+            key={images[currentImage].src + currentImage}
             src={images[currentImage].src}
             alt={images[currentImage].alt}
             className={cn(styles.image, styles.mask)}
@@ -74,10 +73,10 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
       </div>
       <div className={styles.carouselFooter}>
         <div className={styles.carouselControlGroup}>
-          <button onClick={handleNextImage} className={styles.controlButton}>
+          <button onClick={handlePrevImage} className={styles.controlButton}>
             <FaArrowLeft />
           </button>
-          <button onClick={handlePrevImage} className={styles.controlButton}>
+          <button onClick={handleNextImage} className={styles.controlButton}>
             <FaArrowRight />
           </button>
         </div>
