@@ -8,12 +8,9 @@ pre-push:
 pre-commit:
   parallel: true
   commands:
-    prettier:
-      glob: '*.{js,ts,jsx,tsx,css,scss,md,json,yml}'
-      run: pnpm run format {staged_files}
     eslint:
       glob: '*.{js,ts,jsx,tsx}'
-      run: pnpm run lint:fix {staged_files}
+      run: pnpm run lint {staged_files}
     stylelint:
       glob: '*.{css,scss,less,sass}'
       run: pnpm run stylelint {staged_files}
