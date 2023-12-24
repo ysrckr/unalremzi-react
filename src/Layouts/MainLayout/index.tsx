@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react';
 
 import { MobileMenu } from '@/components/MobileMenu';
+import { ScrollBar } from '@/components/ScrollBar';
 import { UIStore } from '@/stores/UIStore';
 import { Outlet } from '@tanstack/react-router';
 import { AnimatePresence } from 'framer-motion';
@@ -25,6 +26,7 @@ export const MainLayout: FC<MainLayoutProps> = () => {
         <AnimatePresence initial={false} mode="wait">
           {isMobileMenuOpen && <MobileMenu />}
         </AnimatePresence>
+        <ScrollBar />
         <Outlet />
       </main>
       <Footer />
