@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { MobileMenu } from '@/components/MobileMenu';
 import { ScrollBar } from '@/components/ScrollBar';
@@ -14,6 +14,19 @@ interface MainLayoutProps {}
 
 export const MainLayout: FC<MainLayoutProps> = () => {
   const { isMobileMenuOpen, lang } = useSnapshot(UIStore);
+  const [scrollTop, setScrollTop] = useState(() => document.documentElement.scrollTop);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollTop(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -21,12 +34,12 @@ export const MainLayout: FC<MainLayoutProps> = () => {
 
   return (
     <>
-      <Header />
+      <Header scrollTop={scrollTop} />
       <main className={styles.main}>
         <AnimatePresence initial={false} mode="wait">
           {isMobileMenuOpen && <MobileMenu />}
         </AnimatePresence>
-        <ScrollBar />
+        <ScrollBar scrollTop={scrollTop} />
         <Outlet />
       </main>
       <Footer />

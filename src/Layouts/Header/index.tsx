@@ -1,31 +1,20 @@
 import { UIStore, toggleMobileMenu } from '@/stores/UIStore';
-import { FC, useEffect, useState } from 'react';
 
 import { CompanyLogo } from '@/components/CompanyLogo';
 import { Navigation } from '@/components/Navigation';
 import { companyLogo } from '@/utils/constants';
 import { motion } from 'framer-motion';
 import { Squeeze as Hamburger } from 'hamburger-react';
+import { FC } from 'react';
 import { useSnapshot } from 'valtio';
 import styles from './header.module.scss';
 
-interface HeaderProps {}
+interface HeaderProps {
+  scrollTop: number;
+}
 
-export const Header: FC<HeaderProps> = () => {
+export const Header: FC<HeaderProps> = ({ scrollTop }) => {
   const { isMobileMenuOpen } = useSnapshot(UIStore);
-  const [scrollTop, setScrollTop] = useState(() => document.documentElement.scrollTop);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollTop(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const alpha = 1 - scrollTop / 1400;
 
