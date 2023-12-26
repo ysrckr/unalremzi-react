@@ -14,8 +14,13 @@ export const Home: FC<HomeProps> = () => {
     document.title = `UnalRemzi | ${title}`;
   }, []);
   return (
-    <section className={styles.section}>
-      <Carousel images={carouselImages} />
-    </section>
+    <>
+      <section className={styles.section}>
+        <Carousel images={carouselImages} />
+      </section>
+      <section>
+        
+      </section>
+    </>
   );
 };
