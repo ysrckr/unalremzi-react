@@ -57,7 +57,10 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
   return (
     <div className={styles.carousel}>
       <div className={styles.innerCarousel}>
-        <AnimatePresence initial={false} custom={direction}>
+        <AnimatePresence
+          initial={false}
+          custom={direction}
+        >
           <motion.img
             key={images[currentImage].src + currentImage}
             src={images[currentImage].src}
@@ -73,10 +76,16 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
       </div>
       <div className={styles.carouselFooter}>
         <div className={styles.carouselControlGroup}>
-          <button onClick={handlePrevImage} className={styles.controlButton}>
+          <button
+            onClick={handlePrevImage}
+            className={styles.controlButton}
+          >
             <FaArrowLeft />
           </button>
-          <button onClick={handleNextImage} className={styles.controlButton}>
+          <button
+            onClick={handleNextImage}
+            className={styles.controlButton}
+          >
             <FaArrowRight />
           </button>
         </div>

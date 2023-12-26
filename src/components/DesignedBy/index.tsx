@@ -10,7 +10,12 @@ export const DesignedBy: FC<DesignedByProps> = ({ author, authorSite }) => {
   return (
     <p>
       Designed and Created By{' '}
-      <a className={styles.link} href={authorSite ?? ''} target="_blank" rel="noopener noreferrer">
+      <a
+        className={styles.link}
+        href={authorSite ?? ''}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {author}
       </a>
     </p>

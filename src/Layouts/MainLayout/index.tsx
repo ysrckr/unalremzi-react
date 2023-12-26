@@ -36,7 +36,10 @@ export const MainLayout: FC<MainLayoutProps> = () => {
     <>
       <Header scrollTop={scrollTop} />
       <main className={styles.main}>
-        <AnimatePresence initial={false} mode="wait">
+        <AnimatePresence
+          initial={false}
+          mode="wait"
+        >
           {isMobileMenuOpen && <MobileMenu />}
         </AnimatePresence>
         <ScrollBar scrollTop={scrollTop} />

@@ -3,6 +3,7 @@ import { CompanyECommerce } from '@/components/CompanyECommerce';
 import { carouselImages } from '@/data/carouselImages';
 import { useEffect, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import styles from './home.module.scss';
 
 interface HomeProps {}
 
@@ -18,11 +19,13 @@ export const Home: FC<HomeProps> = () => {
       <section>
         <Carousel images={carouselImages} />
       </section>
-      <CompanyECommerce
-        title="THE MOST PRESTIGIOUS MEN'S CLOTHING BRAND"
-        link="https://regularsuit.com"
-        websiteName="regular suit"
-      />
+      <section className={styles.sectionWithBackground}>
+        <CompanyECommerce
+          title="THE MOST PRESTIGIOUS MEN'S CLOTHING BRAND"
+          link="https://regularsuit.com"
+          websiteName="regular suit"
+        />
+      </section>
     </>
   );
 };
