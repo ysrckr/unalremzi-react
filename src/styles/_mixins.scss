@@ -1,3 +1,5 @@
+@use './functions.scss' as f;
+
 @mixin media($device) {
   @if $device == large-desktop {
     @media (width >= 1200px) {
@@ -12,4 +14,8 @@
       @content;
     }
   }
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color, $alpha) {
+  box-shadow: $x $y $blur $spread f.alpha($color, $alpha);
 }

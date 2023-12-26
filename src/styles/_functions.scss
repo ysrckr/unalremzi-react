@@ -1,0 +1,15 @@
+@function lighten($color, $amount) {
+  @return mix(#fff, $color, $amount);
+}
+
+@function darken($color, $amount) {
+  @return mix(#000, $color, $amount);
+}
+
+@function mix($color1, $color2, $weight) {
+  @return mix($color1, $color2, $weight);
+}
+
+@function alpha($color, $amount) {
+  @return rgba($color, $amount);
+}

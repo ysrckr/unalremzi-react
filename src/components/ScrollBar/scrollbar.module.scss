@@ -1,0 +1,26 @@
+@use '@/styles/colors.scss' as c;
+@use '@/styles/mixins.scss' as m;
+
+.scrollbar {
+  position: fixed;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  width: 0.2rem;
+  height: 10rem;
+  background-color: c.$primary;
+  z-index: 1;
+
+  .glow {
+    position: absolute;
+    top: 0;
+    width: 0.2rem;
+    opacity: 0;
+    height: 0;
+    z-index: 3;
+    background-color: c.$gold;
+    transition: all 50ms linear;
+
+    @include m.box-shadow(0, 0, 25px, 6px, c.$gold, 60%);
+  }
+}
