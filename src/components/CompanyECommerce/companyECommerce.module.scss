@@ -1,0 +1,32 @@
+@use '@/styles/colors.scss' as c;
+
+.section {
+  max-width: 300px;
+  width: clamp(300px, 100%, 1200px);
+  margin: 1rem auto 0;
+
+  .title {
+    color: c.$primary;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .link {
+    display: block;
+    color: c.$primary;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      scale: 1.1;
+      translate: 0 -1rem;
+    }
+  }
+}
