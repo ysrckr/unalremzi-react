@@ -13,8 +13,14 @@ interface NavigationItemProps {
 export const NavigationItem: FC<NavigationItemProps> = ({ url, label }) => {
   const { t } = useTranslation();
   return (
-    <li className={styles.item} onClick={() => closeMobileMenu()}>
-      <Link to={url} className={styles.link}>
+    <li
+      className={styles.item}
+      onClick={() => closeMobileMenu()}
+    >
+      <Link
+        to={url}
+        className={styles.link}
+      >
         {t(label)}
       </Link>
     </li>

@@ -10,5 +10,6 @@
   "jsxSingleQuote": false,
   "quoteProps": "as-needed",
   "useTabs": false,
+  "singleAttributePerLine": true,
   "plugins": ["prettier-plugin-organize-imports"]
 }

@@ -29,7 +29,11 @@ export const Header: FC<HeaderProps> = ({ scrollTop }) => {
       <CompanyLogo src={companyLogo} />
       <Navigation device="desktop" />
       <div className={styles.hamburger}>
-        <Hamburger toggled={isMobileMenuOpen} toggle={toggleMobileMenu} rounded />
+        <Hamburger
+          toggled={isMobileMenuOpen}
+          toggle={toggleMobileMenu}
+          rounded
+        />
       </div>
     </motion.header>
   );

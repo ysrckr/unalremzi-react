@@ -1,4 +1,8 @@
-.section {
-  width: 100%;
-  height: 100%;
+@use '@/styles/colors.scss' as c;
+
+.sectionWithBackground {
+  background: c.$grey-gradient;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  box-shadow: 10px 47px 85px -59px rgb(0 0 0 / 75%);
 }

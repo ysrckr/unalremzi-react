@@ -13,7 +13,10 @@ export const ScrollBar: FC<ScrollBarProps> = ({ scrollTop }) => {
 
   return (
     <div className={styles.scrollbar}>
-      <div className={styles.glow} style={glowStyle}></div>
+      <div
+        className={styles.glow}
+        style={glowStyle}
+      ></div>
     </div>
   );
 };

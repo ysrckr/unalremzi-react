@@ -9,8 +9,15 @@ interface CompanyLogoProps {
 
 export const CompanyLogo: FC<CompanyLogoProps> = ({ src }) => {
   return (
-    <Link to="/" onClick={() => closeMobileMenu()}>
-      <img src={src} alt="Company Logo" className={styles.image} />
+    <Link
+      to="/"
+      onClick={() => closeMobileMenu()}
+    >
+      <img
+        src={src}
+        alt="Company Logo"
+        className={styles.image}
+      />
     </Link>
   );
 };

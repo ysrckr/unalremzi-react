@@ -12,7 +12,11 @@ export const Navigation: FC<NavigationProps> = ({ device }) => {
     <nav className={styles[`${device}-navigation`]}>
       <ul className={styles[`${device}-navigationList`]}>
         {navigationItems.map(({ url, key }) => (
-          <NavigationItem key={url} url={url} label={key} />
+          <NavigationItem
+            key={url}
+            url={url}
+            label={key}
+          />
         ))}
       </ul>
     </nav>

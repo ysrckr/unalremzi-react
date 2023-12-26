@@ -1,4 +1,5 @@
 import { Carousel } from '@/components/Carousel';
+import { CompanyECommerce } from '@/components/CompanyECommerce';
 import { carouselImages } from '@/data/carouselImages';
 import { useEffect, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,8 +15,17 @@ export const Home: FC<HomeProps> = () => {
     document.title = `UnalRemzi | ${title}`;
   }, []);
   return (
-    <section className={styles.section}>
-      <Carousel images={carouselImages} />
-    </section>
+    <>
+      <section>
+        <Carousel images={carouselImages} />
+      </section>
+      <section className={styles.sectionWithBackground}>
+        <CompanyECommerce
+          title="THE MOST PRESTIGIOUS MEN'S CLOTHING BRAND"
+          link="https://regularsuit.com"
+          websiteName="regular suit"
+        />
+      </section>
+    </>
   );
 };

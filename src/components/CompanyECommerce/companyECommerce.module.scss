@@ -1,0 +1,35 @@
+@use '@/styles/colors.scss' as c;
+
+.container {
+  max-width: 300px;
+  width: clamp(300px, 100%, 1200px);
+  margin: 1rem auto 0;
+
+  .title {
+    color: c.$gold;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: c.$primary 0 0 5px;
+  }
+
+  .link {
+    display: block;
+    color: c.$light;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    box-shadow: 1px 1px 5px 3px c.$light;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 1px 1px 12px 3px c.$light;
+    }
+  }
+}
